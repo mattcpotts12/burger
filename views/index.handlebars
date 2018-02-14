@@ -1,0 +1,25 @@
+
+
+
+
+<div class="container">
+    <div class="jumbotrom">
+            {{!-- <h1>Eat-Da_burger!</h1> --}}
+            <h1>Task List</h1>
+
+            {{!-- <img class="burgerIMG" src="/assets/img/burger.png"> --}}
+    </div>
+
+    <div class="container">
+        <ul>
+            {{#each burger}}
+                {{#unless this.devoured}}
+                    <li>
+                        {{this.id}}
+                        {{this.burger_name}}                   
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
