@@ -68,7 +68,7 @@ var orm = {
             if (err) {
                 throw err;
             }
-            cb(results);
+            cb(result);
         })
     },
     updateOne: function(table, objColVals, condition, cb) {
@@ -85,7 +85,7 @@ var orm = {
             if (err) {
                 throw err;
             }
-            cb(results);
+            cb(result);
         })
     }
 }

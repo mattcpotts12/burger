@@ -1,25 +1,28 @@
+<div>
 
-
-
-
+<!-- Begin page content -->
 <div class="container">
-    <div class="jumbotrom">
-            {{!-- <h1>Eat-Da_burger!</h1> --}}
-            <h1>Task List</h1>
-
-            {{!-- <img class="burgerIMG" src="/assets/img/burger.png"> --}}
-    </div>
-
-    <div class="container">
-        <ul>
-            {{#each burger}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 ">
+            <ol>
+                {{#each burger}}
                 {{#unless this.devoured}}
-                    <li>
-                        {{this.id}}
-                        {{this.burger_name}}                   
-                    </li>
+                    <div>
+                    <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                        <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+                    </form>
+                    </div>
                 {{/unless}}
-            {{/each}}
-        </ul>
-    </div>
-</div>
+                {{/each}}
+            </ol>
+       
+<form class="create-update-form" action="/burgers" method="POST"  align="center">
+
+    <section class="form-group">
+        <textarea type="text"  name="burger_name"></textarea>
+        <input type="hidden" name="devoured" value="0">
+    </section>
+
+    <button type="submit">Submit</button>
+</form>
+<p align="center">Enter a burger you want to eat. Click the "Submit" button</p>
